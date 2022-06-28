@@ -1,30 +1,24 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import EmailSubscribe from '../components/EmailSubscribe'
 import styles from '../styles/Home.module.css'
+import useTranslation from 'next-translate/useTranslation'
 
 export default function Home() {
+  const { t } = useTranslation('home')
+
   return (
     <div className={styles.container}>
       <Head>
-        <title>Operation Gannet</title>
-        <meta name="description" content="Something's coming, something good..." />
+        <title>{t('common:meta.title')}</title>
+        <meta name="description" content={t('common:meta.description')} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <div className={styles.content}>
-          <h1 className={styles.title}>
-            You've reached Operation Gannet! 🤫
-          </h1>
-
-          <p className={styles.description}>
-            We're hard at work getting set up to bring you inspiring stories, beautifully told.
-          </p>
-
-          <p className={styles.subtitle}>
-            Subscribe to hear more from us!&nbsp;<i>(We won't spam you, ever)</i>
-          </p>
+          <h1 className={styles.title}>{t('title')}</h1>
+          <p className={styles.description}>{t('subtitle')}</p>
+          <p className={styles.subtitle}>{t('subscribe')}</p>
           <EmailSubscribe />
         </div>
 
