@@ -4,8 +4,8 @@ import { useRef } from 'react'
 import useTranslation from 'next-translate/useTranslation'
 import ClipLoader from 'react-spinners/ClipLoader'
 
-const renderEmailForm = (t, { email }) => (
-  ({ subscribe, status, message }) => (
+function renderEmailForm(t, { email }) {
+  const render = ({ subscribe, status, message }) => (
     <form onSubmit={(event) => {
       event.preventDefault()
       if (!email.current || !email.current.value) { return }
@@ -21,7 +21,8 @@ const renderEmailForm = (t, { email }) => (
       <p className={styles.message}>{message}</p>
     </form>
   )
-)
+  return render
+}
 
 export default function EmailSubscribe() {
   const email = useRef()
