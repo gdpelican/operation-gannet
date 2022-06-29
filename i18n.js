@@ -5,5 +5,5 @@ module.exports = {
     '*': ['common'],
     '/': ['home']
   },
-  loadLocaleFrom: (lang, ns) => import(`./locales/${lang}/${ns}.yml`).then(m => m.default),
+  loadLocaleFrom: (lang, ns) => require(`./locales/${lang}/${ns}.yml`)
 }
