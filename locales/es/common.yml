@@ -1,3 +1,6 @@
 meta:
   title: Operación de Gannet
   description: Historias poderosas, contadas hermosamente
+mailchimp:
+  email: "tu@ejemplo.com"
+  subscribe: "Suscribirte"

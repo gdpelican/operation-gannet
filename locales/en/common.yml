@@ -1,3 +1,6 @@
 meta:
   title: "Operation Gannet"
   description: "Powerful stories, beautifully told"
+mailchimp:
+  email: "you@example.com"
+  subscribe: "Subscribe"
