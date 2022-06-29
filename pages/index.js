@@ -2,8 +2,9 @@ import Head from 'next/head'
 import EmailSubscribe from '../components/EmailSubscribe'
 import styles from '../styles/Home.module.css'
 import useTranslation from 'next-translate/useTranslation'
+import { fetchProductions } from '../datasources/notion'
 
-export default function Home() {
+export default function Home({ productions }) {
   const { t } = useTranslation('home')
 
   return (
@@ -26,4 +27,8 @@ export default function Home() {
       </main>
     </div>
   )
+}
+
+export async function getServerSideProps() {
+  return { props: { productions: await fetchProductions() } }
 }
